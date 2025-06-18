@@ -1,42 +1,84 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
-
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
+########################################
+# Node / Angular
+########################################
+node_modules/
+dist/
+.tmp/
+.angular/
+coverage/
 npm-debug.log
 yarn-error.log
+package-lock.json
+.env
 
-# IDEs and editors
-.idea/
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+########################################
+# ASP.NET Core / .NET
+########################################
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.dbmdl
+*.log
+*.vspscc
+*.vssscc
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.ide
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+# User secrets
+secrets.json
 
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+# Entity Framework Migrations metadata
+Migrations/
 
-# System files
+########################################
+# Visual Studio
+########################################
+.vs/
+*.psess
+*.vsp
+*.vspx
+*.vsmdi
+TestResults/
+*.ncb
+*.sdf
+*.cache
+*.dbmdl
+*.bak
+*.bak2
+
+########################################
+# VS Code
+########################################
+.vscode/
+.history/
+
+########################################
+# OS generated
+########################################
 .DS_Store
 Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+
+# Publish output
+wwwroot/
+
+# Rider
+.idea/
+*.sln.iml
+
+########################################
+# Optional: SSL Dev Certs
+########################################
+*.pfx
+*.pem
