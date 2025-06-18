@@ -16,5 +16,12 @@ export const routes: Routes = [
         (d) => d.UrlCreationFormComponent
       ),
   },
+  {
+    path: 'urls/:id',
+    loadComponent: () =>
+      import('./components/url-info/url-info.component').then(
+        (d) => d.UrlInfoComponent
+      ),
+  },
   { path: '**', component: LoginPageComponent},
 ];

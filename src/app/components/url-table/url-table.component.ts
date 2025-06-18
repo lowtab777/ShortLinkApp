@@ -11,21 +11,22 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { UrlRecord } from '../../models/short-url.model';
+import { ShortUrlRecord } from '../../models/short-url.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-url-table',
-  imports: [MatTableModule, CommonModule, MatIconModule, MatPaginatorModule],
+  imports: [MatTableModule, CommonModule, MatIconModule, MatPaginatorModule, RouterModule],
   templateUrl: './url-table.component.html',
   styleUrl: './url-table.component.scss',
 })
 export class UrlTableComponent implements AfterViewInit, OnChanges {
-  @Input() data: UrlRecord[] = [];
+  @Input() data: ShortUrlRecord[] = [];
   @Input() displayedColumns: string[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  dataSource = new MatTableDataSource<UrlRecord>();
+  dataSource = new MatTableDataSource<ShortUrlRecord>();
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;

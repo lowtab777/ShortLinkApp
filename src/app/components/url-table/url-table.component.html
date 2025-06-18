@@ -12,8 +12,8 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef class="col-10"></th>
     <td mat-cell *matCellDef="let row" class="col-10">
-      <button mat-icon-button (click)="onEdit(row)">
-        <mat-icon>edit</mat-icon>
+      <button mat-icon-button [routerLink]="['/urls', row.id]">
+        <mat-icon>info</mat-icon>
       </button>
     </td>
   </ng-container>
@@ -23,7 +23,7 @@
 </table>
 
 <mat-paginator
-  [pageSizeOptions]="[5, 10, 20]"
+  [pageSizeOptions]="[20, 50]"
   showFirstLastButtons
   aria-label="Select page of periodic elements"
 >
