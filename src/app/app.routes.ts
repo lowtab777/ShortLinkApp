@@ -3,10 +3,17 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 
 export const routes: Routes = [
   {
-    path: 'url-dashboard',
+    path: 'dashboard',
     loadComponent: () =>
       import('./components/url-dashboard/url-dashboard.component').then(
         (d) => d.UrlDashboardComponent
+      ),
+  },
+  {
+    path: 'create-url',
+    loadComponent: () =>
+      import('./components/url-creation-form/url-creation-form.component').then(
+        (d) => d.UrlCreationFormComponent
       ),
   },
   { path: '**', component: LoginPageComponent},

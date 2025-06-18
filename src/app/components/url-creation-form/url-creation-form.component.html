@@ -1,1 +1,11 @@
-<p>url-creation-form works!</p>
+<div class="form-wrap">
+  <h2>Create URL</h2>
+  <form [formGroup]="form" (ngSubmit)="onAddClicked()">
+    <mat-form-field>
+      <mat-label>Enter long url</mat-label>
+      <input matInput formControlName="longUrl" />
+      <div class="error-list"></div>
+    </mat-form-field>
+    <button type="submit" mat-button class="btn-primary">Create</button>
+  </form>
+</div>
