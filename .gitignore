@@ -1,6 +1,4 @@
-########################################
-# Node / Angular
-########################################
+
 node_modules/
 dist/
 .tmp/
@@ -11,45 +9,8 @@ yarn-error.log
 package-lock.json
 .env
 
-########################################
-# ASP.NET Core / .NET
-########################################
-bin/
-obj/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
-*.dbmdl
-*.log
-*.vspscc
-*.vssscc
-project.lock.json
-project.fragment.lock.json
-artifacts/
-*.ide
-
 # User secrets
 secrets.json
-
-# Entity Framework Migrations metadata
-Migrations/
-
-########################################
-# Visual Studio
-########################################
-.vs/
-*.psess
-*.vsp
-*.vspx
-*.vsmdi
-TestResults/
-*.ncb
-*.sdf
-*.cache
-*.dbmdl
-*.bak
-*.bak2
 
 ########################################
 # VS Code
