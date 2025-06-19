@@ -4,10 +4,11 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { materialModules, materialProviders } from '../../../materials';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule , ...materialModules],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule , ...materialModules, RouterModule],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'
 })
@@ -29,7 +30,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('creds: ', this.form.value)
+    console.log('creds: ', this.form.value);
   }
 
 

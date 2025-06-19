@@ -1,0 +1,9 @@
+<div class="dashboard-wrap">
+  <div class="dashboard-table">
+    <app-url-table
+      [data]="urls"
+      [displayedColumns]="displayedColumns"
+    ></app-url-table>
+  </div>
+  <button mat-button class="btn-primary" [routerLink]="'/create-url'">Add new URL</button>
+</div>

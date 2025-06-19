@@ -1,0 +1,10 @@
+<div class="info-page-wrap">
+    <form [formGroup]="form" (ngSubmit)="onSaveClick()">
+        <mat-form-field>
+            <mat-label>
+                Long Url
+            </mat-label>
+            <input matInput formControlName="longUrl" />
+        </mat-form-field>
+    </form>
+</div>
