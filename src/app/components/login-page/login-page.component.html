@@ -1,6 +1,6 @@
 <div class="login-page-wrap">
   <div class="login-box">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form" novalidate>
       <mat-form-field>
         <mat-label>Login</mat-label>
         <input matInput formControlName="login" />
@@ -11,7 +11,8 @@
         <input matInput formControlName="password" />
         <div class="error-list"></div>
       </mat-form-field>
-      <button type="submit" mat-button [routerLink]="'/dashboard'" class="btn-primary">Login</button>
+      <button type="submit" class="btn-primary">Login</button>
+      <button type="submit" class="btn-primary" [routerLink]="'/dashboard'">Continue anonymously</button>
     </form>
   </div>
 </div>

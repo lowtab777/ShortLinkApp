@@ -9,11 +9,20 @@
     <td mat-cell *matCellDef="let url" class="col-70">{{ url.longUrl }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="action">
+  <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef class="col-10"></th>
     <td mat-cell *matCellDef="let row" class="col-10">
-      <button mat-icon-button [routerLink]="['/urls', row.id]">
+      <button mat-icon-button [routerLink]="['/urls', row.id]" *ngIf="auth.isAuthenticated()">
         <mat-icon>info</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="delete" >
+    <th mat-header-cell *matHeaderCellDef class="col-10"></th>
+    <td mat-cell *matCellDef="let row" class="col-10">
+      <button mat-icon-button [routerLink]="['/urls', row.id]" *ngIf="auth.isAdmin()">
+        <mat-icon>delete</mat-icon>
       </button>
     </td>
   </ng-container>

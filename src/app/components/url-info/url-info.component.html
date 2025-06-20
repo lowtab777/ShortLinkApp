@@ -1,10 +1,21 @@
 <div class="info-page-wrap">
-    <form [formGroup]="form" (ngSubmit)="onSaveClick()">
-        <mat-form-field>
-            <mat-label>
-                Long Url
-            </mat-label>
-            <input matInput formControlName="longUrl" />
-        </mat-form-field>
-    </form>
+  <form [formGroup]="form" (ngSubmit)="onSaveClick()">
+    <mat-form-field>
+      <mat-label> Long Url </mat-label>
+      <input matInput formControlName="longUrl" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Short Url </mat-label>
+      <input matInput formControlName="shortUrl" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Created By </mat-label>
+      <input matInput formControlName="createdBy" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> Created Date </mat-label>
+      <input matInput formControlName="createdDate" />
+    </mat-form-field>
+    <button type="submit" mat-button class="btn-primary">Update</button>
+  </form>
 </div>

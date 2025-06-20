@@ -13,6 +13,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ShortUrlRecord } from '../../models/short-url.model';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../services/auth-service';
 
 @Component({
   selector: 'app-url-table',
@@ -25,6 +26,8 @@ export class UrlTableComponent implements AfterViewInit, OnChanges {
   @Input() displayedColumns: string[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  constructor(public auth: AuthService){}
 
   dataSource = new MatTableDataSource<ShortUrlRecord>();
 

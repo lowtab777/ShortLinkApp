@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './url-dashboard.component.scss',
 })
 export class UrlDashboardComponent implements OnInit  {
-  displayedColumns: string[] = ['shortUrl', 'longUrl', 'action'];
+  displayedColumns: string[] = ['shortUrl', 'longUrl', 'edit', 'delete'];
   
   ngOnInit(): void {
   }
