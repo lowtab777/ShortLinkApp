@@ -61,6 +61,6 @@ export class UrlInfoComponent implements OnInit {
     });
   }
   onSaveClick(): void {
-    this.urlService.updateLink(id,);
+    //this.urlService.updateLink(id,);
   }
 }
