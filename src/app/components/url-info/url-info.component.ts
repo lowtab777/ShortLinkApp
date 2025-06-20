@@ -1,10 +1,16 @@
+import { UrlService } from './../../services/url-service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ShortUrlInfo } from '../../models/short-url-info.model';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-url-info',
@@ -23,12 +29,27 @@ export class UrlInfoComponent implements OnInit {
   @Input() shortUrlInfo!: ShortUrlInfo;
   form!: FormGroup;
 
-  constructor(private fb: FormBuilder){
-
-  }
+  constructor(
+    private fb: FormBuilder,
+    private urlService: UrlService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.form = this.buildForm();
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    console.log('onInit', id)
+
+    if (!isNaN(id)) {
+      this.urlService.getById(id).subscribe((v) => {
+        this.form.setValue({
+          longUrl: v.longUrl,
+          shortUrl: v.shortUrl,
+          createdBy: v.createdBy,
+          createdDate: v.createdDate
+        })
+      });
+    }
   }
 
   buildForm(): FormGroup {
@@ -36,10 +57,10 @@ export class UrlInfoComponent implements OnInit {
       longUrl: ['', [Validators.required, Validators.minLength(10)]],
       shortUrl: ['', Validators.required],
       createdBy: ['', Validators.required],
-      createdDate: ['', Validators.required]
-    })
+      createdDate: ['', Validators.required],
+    });
   }
   onSaveClick(): void {
-    // add saving
+    this.urlService.updateLink(id,);
   }
 }
