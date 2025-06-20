@@ -33,7 +33,10 @@ export class UrlInfoComponent implements OnInit {
 
   buildForm(): FormGroup {
     return this.fb.group({
-      longUrl: ['', [Validators.required, Validators.minLength(10)]]
+      longUrl: ['', [Validators.required, Validators.minLength(10)]],
+      shortUrl: ['', Validators.required],
+      createdBy: ['', Validators.required],
+      createdDate: ['', Validators.required]
     })
   }
   onSaveClick(): void {

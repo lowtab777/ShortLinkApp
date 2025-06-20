@@ -42,6 +42,8 @@ export class AuthService {
 
   isAdmin(): boolean {
     const payload = this.decodeToken();
+    
+    console.log('payload', payload);
     return payload?.role === 'Admin';
   }
   isUser(): boolean {
