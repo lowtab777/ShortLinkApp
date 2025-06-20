@@ -16,11 +16,11 @@ export class UrlService {
     });
   }
 
-  updateLink(id: number, updatedValue: ShortUrlInfo): Observable<ShortUrlInfo> {
-    // return this.http.put<ShortUrlInfo>(`${this.api}/${id}`, updatedValue.updatedValue, {
-    //   withCredentials: true,
-    // });
-  }
+//   updateLink(id: number, updatedValue: ShortUrlInfo): Observable<ShortUrlInfo> {
+//     // return this.http.put<ShortUrlInfo>(`${this.api}/${id}`, updatedValue.updatedValue, {
+//     //   withCredentials: true,
+//     // });
+//   }
 
   getById(id: number): Observable<ShortUrlInfo> {
     return this.http.get<ShortUrlInfo>(`${this.api}/${id}`, {
